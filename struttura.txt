@@ -1,0 +1,20 @@
+[ ] Cerare la struttura delle cartelle
+[ ] Cerare un progetto NPM e installare le dipendenze
+    -Express
+    -Esj express-esj-layouts
+    -nodemon
+[ ] Creare un server Express => file server.js
+[ ] Creare un homepage utilizzando HTML e CSS (in particolare tailwind css)
+[ ] Creare una pagina per il carrello e gestire le situazione:
+    - Sommario delle ordinazioni
+    - Sezione carrello vuota
+[ ] Creare:
+    - un controller per le ordinazioni
+    - creare una vista per le ordinazioni sia lato cliente sia lato admin
+    - creare una pagina di status delle ordinazioni
+[ ] Creare una pagina di login
+[ ] Creare un crud per le registrazioni degli utenti:
+    - le dipendenze usate sono express-flash express-session cookie-parser dotenv
+    - lo stato del codice dell'articolo
+    - connessione al database (dipendenza usata mongoose)
+[ ] Schermata di login utilizzando passport (dipendeze: passport passport-local express-session)
