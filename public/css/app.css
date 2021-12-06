@@ -52,3 +52,14 @@ section.cart {
 section.cart .amount {
   color: #2c6b2f;
 }
+
+section.login {
+  background: #F8F8F8;
+  min-height: calc(100vh - 135px);
+}
+section.login a {
+  color: #2c6b2f;
+}
+section.login a:hover {
+  color: #b20701;
+}

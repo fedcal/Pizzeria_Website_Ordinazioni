@@ -21,6 +21,13 @@ app.get('/carrello', (req,res) => {
     res.render('customers/carrello')
 })
 
+app.get('/login', (req,res) => {  
+    res.render('auth/login')
+})
+app.get('/registrazione', (req,res) => {  
+    res.render('auth/register')
+})
+
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)
 })
