@@ -13,20 +13,7 @@ app.use(expressLayout)
 app.set('views',path.join(__dirname,'/resources/views'))
 app.set('view engine', 'ejs')
 
-app.get('/', (req,res) => {
-    res.render('home')
-})
-
-app.get('/carrello', (req,res) => {  
-    res.render('customers/carrello')
-})
-
-app.get('/login', (req,res) => {  
-    res.render('auth/login')
-})
-app.get('/registrazione', (req,res) => {  
-    res.render('auth/register')
-})
+require('./routers/web')(app)
 
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)

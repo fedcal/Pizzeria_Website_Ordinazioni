@@ -5,6 +5,15 @@
     -nodemon
 [ ] Creare un server Express => file server.js
 [ ] Creare un homepage utilizzando HTML e CSS (in particolare tailwind css)
+[ ] Per il database:
+    - connettere mongo db 
+    - usare connect-mongo per storicizzare la sessione, dipendenze:
+        - mongoose
+        - exlress-session
+        - connect -mongo
+        - dotenv
+    -axios per inviare richiete ajax 
+    - librerira per le notifiche: https://ned.im/noty/#/
 [ ] Creare una pagina per il carrello e gestire le situazione:
     - Sommario delle ordinazioni
     - Sezione carrello vuota
