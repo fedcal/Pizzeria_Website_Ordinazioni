@@ -1,0 +1,76 @@
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiase;
+  color: #232323;
+}
+
+nav li:last-child a {
+  background-color: #2c6b2f;
+}
+
+nav li:last-child a:hover {
+  background-color: #b20701;
+}
+
+nav li a {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+nav li a:hover {
+  color: #2c6b2f;
+}
+
+section.hero {
+  background: #F8F8F8;
+}
+
+.size {
+  background: #F8F8F8;
+}
+
+.add-to-cart {
+  border: 2px solid #2c6b2f;
+  color: #2c6b2f;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-to-cart:hover {
+  background: #2c6b2f;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-primary {
+  background: #2c6b2f;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #b20701;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+
+section.cart .amount {
+  color: #2c6b2f;
+}
+
+section.login {
+  background: #F8F8F8;
+  min-height: calc(100vh - 135px);
+}
+
+section.login a {
+  color: #2c6b2f;
+}
+
+section.login a:hover {
+  color: #b20701;
+}
+/*# sourceMappingURL=app.css.map */
