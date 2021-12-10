@@ -1,21 +1,24 @@
 <section class="login flex justify-center pt-24">
     <div class="w-full max-w-xs">
-        <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form action="/registrazione" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <% if(messages.error) { %>
+            <span class="text-red-500 text-sm"><%= messages.error %></span>
+            <% } %>
             <div class="mb-4">
                 <label for="Usurname" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nome" id="nome">
+                <input name="name" value="<%= messages.name %>" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nome" id="nome">
             </div>
             <div class="mb-4">
                 <label for="Usurname" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                <input type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" id="email">
+                <input name="mail"  value="<%= messages.email %>" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" id="email">
             </div>
             <div class="mb-6">
-                <label for="password" class="block text-gray-700 text-smfont-bold mb-2">Password</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" id="password">
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                <input name="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="*******" id="password">
             </div>
             <div class="flex items-center justify-between">
-                <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-nne focus:shadow-outline"type="button">Accedi</button>
-                <a href="/registrazione" class="inline-block align-baseline font-bold text-sm">Hai già un account?</a>
+                <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-nne focus:shadow-outline" type="submit">Registrati</button>
+                <a href="/login" class="inline-block align-baseline font-bold text-sm">Hai già un account?</a>
             </div>
         </form>
     </div>

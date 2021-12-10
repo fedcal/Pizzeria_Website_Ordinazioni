@@ -5,13 +5,11 @@ const cartController = require('../app/http/controllers/customers/cartController
 function initRoutes(app){
    
     app.get('/', homeController().index)
-
     app.get('/carrello', cartController().cart)
-
     app.get('/login', authController().login)
-
     app.get('/registrazione', authController().registrazione)
 
     app.post('/update-cart', cartController().update)
+    app.post('/registrazione',authController().postRegistrazione)
 }
-module.exports=initRoutes
+module.exports=initRoutes 
