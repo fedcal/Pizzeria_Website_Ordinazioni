@@ -24,8 +24,8 @@
                             <h2 class="mb-4 text-lg"><%= pizzas.name %></h2>
                             <span class="py-1 px-4 uppercase text-xs size rounded-full"><%= pizzas.ingredienti %></span>
                             <div class="flex items-center justify-around mt-6"> 
-                                <span class="font-bold text-lg"><%= pizzas.price %> €</span>
-                                <button data-pizza="<%= JSON.stringify(pizzas) %>"class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                                <span class="font-bold text-lg"><%= (pizzas.price).toFixed(2) %> €</span>
+                                <button data-pizza="<%= JSON.stringify(pizzas)%>"class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
                                     <span>+</span>
                                     <span class="ml-4">Aggiungi</span>
                                 </button>

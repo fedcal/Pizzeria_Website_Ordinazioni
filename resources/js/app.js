@@ -9,14 +9,14 @@ function updateCart(pizza){
         cartCounter.innerText = res.data.totalQty
         new Noty({
             type: 'success',
-            timeout:1300,
+            timeout: 1300,
             text:'Aggiunto nel carrello!',
             progressBar: false
         }).show();
     }).catch(err => {
         new Noty({
             type: 'error',
-            timeout:1300,
+            timeout: 1300,
             text:'Qualcosa è andato storto!',
             progressBar: false
         }).show();
@@ -25,7 +25,7 @@ function updateCart(pizza){
 
 addToCart.forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
-        let pizza=JSON.parse(btn.dataset.pizza)
+        let pizza = JSON.parse(btn.dataset.pizza)
         updateCart(pizza)
     })
 })

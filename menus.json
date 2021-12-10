@@ -5,7 +5,7 @@
         },
         "name":"Margherita",
         "image":"pizza.png",
-        "price":"3,50",
+        "price":"3.50",
         "ingredienti":"pomodoro, mozzarella, basilico"
     },
     {
@@ -14,7 +14,7 @@
         },
         "name":"Diavola",
         "image":"pizza.png",
-        "price":"4,50",
+        "price":"4.50",
         "ingredienti":"pomodoro, mozzarella, salame piccante"
     },
     {
@@ -23,7 +23,7 @@
         },
         "name":"Napoli",
         "image":"pizza.png",
-        "price":"5,50",
+        "price":"5.50",
         "ingredienti":"pomodoro, mozzarella di bufala"
     },
     {
@@ -32,7 +32,7 @@
         },
         "name":"Sarda",
         "image":"pizza.png",
-        "price":"6,00",
+        "price":"6.00",
         "ingredienti":"pomodor, mozzarella, acciughe"
     },
     {
@@ -41,7 +41,7 @@
         },
         "name":"Patapizza",
         "image":"pizza.png",
-        "price":"6,50",
+        "price":"6.50",
         "ingredienti":"pomodoro, mozzarella, patatine"
     },
     {
@@ -50,7 +50,7 @@
         },
         "name":"Lecce",
         "image":"pizza.png",
-        "price":"8,00",
+        "price":"8.00",
         "ingredienti":"mozzarella, prosciutto, salsa, pepe, origano"
     }
 ]
