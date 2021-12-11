@@ -11,8 +11,9 @@ require('dotenv').config()
 
 const mongoose=require('mongoose')
 const session=require('express-session')
-const MongoDbStore=require('connect-mongo')
+const MongoDbStore=require('connect-mongo') 
 const MongoStore = require('connect-mongo')
+const passport = require('passport')
 
 //DB
 const url='mongodb://localhost/PizzeriaOrder';
@@ -21,6 +22,12 @@ const connection=mongoose.connection;
 connection.once('open', ()=>{
     console.log('Database Connected...');
 });
+
+//Configurazione passport
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 //Session config

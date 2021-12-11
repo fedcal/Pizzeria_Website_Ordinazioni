@@ -11,5 +11,6 @@ function initRoutes(app){
 
     app.post('/update-cart', cartController().update)
     app.post('/registrazione',authController().postRegistrazione)
+    app.post('/login', authController().postLogin)
 }
 module.exports=initRoutes 
