@@ -27,3 +27,9 @@
     - lo stato del codice dell'articolo
     - connessione al database (dipendenza usata mongoose)
 [ ] Schermata di login utilizzando passport (dipendeze: passport passport-local express-session)
+[ ] creare una vista con una tabella "Ordini" per il cliente e l'admin
+[ ] Creare una pagina per recapitolare lo stato dell'ordine 
+[ ] Sviluppare la funzionaltà per piazzare un ordine
+[ ] Creare un tracker per gli ordini ( utilizzare la libreria moment)
+[ ] Connessione socket con Socket.io
+[ ] Gestire i pagamenti in contanti e con carta di credito

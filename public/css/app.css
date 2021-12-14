@@ -345,3 +345,7 @@ section.login a {
   border-radius: 50px !important;
   padding-left: 8px !important;
 }
+
+a.link {
+  color: #2c6b2f;
+}

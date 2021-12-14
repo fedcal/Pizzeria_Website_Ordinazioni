@@ -8,6 +8,12 @@ function authController(){
             res.render('auth/login')
         },
         postLogin(req,res,next){
+            const { email, password } = req.body //Questi campi devo combaciare con il nome dei campi input del form register
+            if(!email || !password){
+                req.flash('error', 'Tutti i campi sono richiesti')
+                req.flash('email', email)
+                return res.redirect('/login')
+            }
             passport.authenticate('local', (err, user, info) =>{
                 if(err){
                     req.flash('error', info.message)
@@ -31,11 +37,12 @@ function authController(){
             res.render('auth/register')
         },
         async postRegistrazione(req,res){
-            const { name, email, password } = req.body //Questi campi devo combaciare con il nome dei campi input del form register
-            if(!name || !email || !password){
+            const { name, cognome, email, password } = req.body //Questi campi devo combaciare con il nome dei campi input del form register
+            if(!name || !email || !password || !cognome){
                 req.flash('error', 'Tutti i campi sono richiesti')
                 req.flash('name', name)
                 req.flash('email', email)
+                req.flash('cognome', cognome)
                 return res.redirect('/registrazione')
             }
 
@@ -52,6 +59,8 @@ function authController(){
 
              const user = new User({
                  name,
+                 cognome,
+                 n_order: 0,
                  email,
                  password: hashedPassword
              })
@@ -64,10 +73,12 @@ function authController(){
                 req.flash('error', 'Qualcosa è andato storto')
                 return res.redirect('register')
              })
-
-            console.log(req.body)
+        },
+        logout(req,res){
+            req.logout()
+            return res.redirect('/login')
         }
     }
 }
 
-module.exports= authController
+module.exports = authController

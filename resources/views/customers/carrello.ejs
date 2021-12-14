@@ -27,17 +27,26 @@
                 <span class="text-lg font-bold">Totale: </span>
                 <span class="amount text-2xl font-bold ml-2">€ <%= (session.cart.totalPrice).toFixed(2) %></span>
             </div>
+            <% if(user) { %>
             <div>
-                <form action="" class="mt-12">
-                    <input type="text" name="" id="" class="border border-gray-400 p-2 w-1/2 mb-4" placeholder="Numero di telefono">
-                    <input type="text" name="" id="" class="border border-gray-400 p-2 w-1/2" placeholder="Note">
+                
+                <form action="/orders" method="POST" class="mt-12">
+                    <% if(messages.error) { %>
+                        <span class="text-red-500 text-sm"><%= messages.error %></span>
+                        <% } %><br>
+                    <input name="phone" type="text" name="" id="" class="border border-gray-400 p-2 w-1/2 mb-4 mt-4" placeholder="Numero di telefono">
+                    <input name="note" type="text" name="" id="" class="border border-gray-400 p-2 w-1/2 mb-4" placeholder="Note">
+                    <input name="date" type="text" name="" id="" class="border border-gray-400 p-2 w-1/2 mb-4" placeholder="Data ordine GG/MM/AAAA">
+                    <input name="ora" type="text" name="" id="" class="border border-gray-400 p-2 w-1/2" placeholder="Ora ritiro orine HH:MM">
                     <div>
-                        <!--<button type="submit" class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Ordina ora</button>-->
+                        <button type="submit" class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Ordina ora</button>
                     </div>
                     
                 </form>
             </div>
-            <a href="" class="inline-block cursor-pointer px-6 btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Accedi per continuare</a>
+            <% } else { %>
+            <a href="/login" class="inline-block cursor-pointer px-6 btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Accedi per continuare</a>
+            <% } %>
         </div>
     </div>
 
