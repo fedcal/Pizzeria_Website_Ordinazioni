@@ -4,17 +4,19 @@ const bcrypt = require ('bcrypt')
 
 
  function init(passport){
-    passport.use(new LocalStrategy({ usernameField:'email' }, async (email, password, done) => {
+    passport.use(new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
         //Cotrolliamo se la mail esiste
         const user = await User.findOne({ email: email })
-        if(!user){
+        if(!user) {
             return done(null, false, { message: 'Nessun utente con questa mail'})
         }
+
         bcrypt.compare(password, user.password).then(match => {
             if(match) {
-                return done(null, user, {message: 'Accesso riuscito'})
+                return done(null, user, { message: 'Accesso riuscito' })
             }
-            return done(null, false, {message: 'Nome o passworf sbagliate'})
+
+            return done(null, false, { message: 'Nome o password sbagliate'  })
         }).catch(err => {
             return done(null, false, { message: 'Qualcosa è andato storto' })
         })
@@ -31,7 +33,6 @@ const bcrypt = require ('bcrypt')
         })
     })
 
-    
 
 }
 

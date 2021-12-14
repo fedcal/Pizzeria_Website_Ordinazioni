@@ -17,12 +17,15 @@ function authController(){
                     req.flash('error', info.message)
                     return res.redirect('login')
                 }
-                req.login(user, () => {
+                req.login(user, (err) => {
                     if(err){
+                        req.flash('error', info.message)
+                        return next(err)
                         
                     }
+                    return res.redirect('/')
                 })
-            })
+            })(req, res, next)
         },
         registrazione(req, res){
             res.render('auth/register')
