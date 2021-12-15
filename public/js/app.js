@@ -2147,6 +2147,18 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/admin.js":
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
+/***/ ((module) => {
+
+function initAdmin() {}
+
+module.exports = initAdmin;
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -2159,6 +2171,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 /* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var addToCart = document.querySelectorAll('.add-to-cart');
@@ -2189,6 +2204,15 @@ addToCart.forEach(function (btn) {
     updateCart(pizza);
   });
 });
+var alertMsg = document.querySelector('#success-alert');
+
+if (alertMsg) {
+  setTimeout(function () {
+    alertMsg.remove();
+  }, 1800);
+}
+
+(0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)();
 
 /***/ }),
 

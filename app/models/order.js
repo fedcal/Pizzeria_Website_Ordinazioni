@@ -13,8 +13,8 @@ const orderSchema =new Schema({
     items: { type: Object, required: true },
     phone: { type: String, required: true},
     note: { type: String, required: false},
-    date: { type: String, required: true},
-    ora: { type: String, required: true},
+    dataOrdine: { type: String, required: true},
+    oraOrdine: { type: String, required: true},
     paymentType: { type: String, default: 'COD'},
     status: { type: String, default: 'order_placed'},
 }, { timestamps: true})

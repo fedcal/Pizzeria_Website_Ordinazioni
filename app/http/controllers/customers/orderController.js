@@ -1,5 +1,8 @@
 const Order = require('../../../models/order')
 const User = require('../../../models/user')
+
+const moment = require('moment')
+
 function orderController () {
     return{
         store(req,res) {
@@ -19,21 +22,26 @@ function orderController () {
                 nameOrder: req.user.name+req.user.cognome+req.user.n_order,
                 customerId: req.user._id,
                 items: req.session.cart.items,
+                dataOrdine: date,
+                oraOrdine: ora,
                 phone,
                 note
             })
+
             order.save().then(result => {
                 req.flash('success', 'Ordine effettuato con successo')
-                return res.redirect('/')
+                delete req.session.cart
+                return res.redirect('/cliente/ordini')
 
             }).catch(err =>{
                 req.flash('error', 'Qualcosa è andato storto')
                 return res.redirect('/carrello')
             })
         },
+
         async index(req, res) {
-            const orders = await Order.find({ custmomerId: req.user._id })
-            res.render('customers/ordini',{ orders: orders})
+            const orders = await Order.find({ custmomerId: req.user._id }, null, { sort: { 'createdAt': -1} })
+            res.render('customers/ordini',{ orders: orders, moment: moment})
         }
 
     }
